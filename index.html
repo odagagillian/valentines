@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Valentine 🖤</title>
+
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        color: white;
+        overflow-x: hidden;
+    }
+
+    section {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        padding: 30px;
+        max-width: 450px;
+        margin: auto;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+
+    h1, h2 {
+        color: #ff4d6d;
+    }
+
+    button {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 30px;
+        background-color: #ff4d6d;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    button:hover {
+        background-color: #e63950;
+    }
+
+    /* Hearts animation */
+    .heart {
+        position: fixed;
+        bottom: -20px;
+        color: #ff4d6d;
+        animation: floatUp 6s linear infinite;
+        opacity: 0.7;
+        z-index: 0;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-110vh); opacity: 0; }
+    }
+
+    /* Gallery */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .gallery img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .result {
+        font-size: 20px;
+        margin-top: 20px;
+        color: #ffb3c6;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="Sweet Love.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- INTRO -->
+<section>
+    <div class="card">
+        <h1>Happy Valentine’s 🖤</h1>
+        <p>For <strong>MY LOVE</strong></p>
+        <p>MY Little Weirdo✨</p>
+    </div>
+</section>
+
+<!-- GAME -->
+<section>
+    <div class="card">
+        <h2>💘 Will You Be My Valentine?</h2>
+        <button onclick="yesAnswer()">Yes 💖</button>
+        <button onclick="noAnswer()">No 🙈</button>
+        <div class="result" id="gameResult"></div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+    <h2>📸 Our Memories</h2>
+    <div class="gallery">
+        <img src="https://picsum.photos/300?1">
+        <img src="https://picsum.photos/300?2">
+        <img src="https://picsum.photos/300?3">
+        <img src="https://picsum.photos/300?4">
+    </div>
+    <p style="margin-top:15px;">(Replace these with your own photos 💕)</p>
+</section>
+
+<script>
+function yesAnswer() {
+    document.getElementById("gameResult").innerHTML =
+        "Yayyy 🥰 You just made my heart so happy 💖";
+}
+
+function noAnswer() {
+    document.getElementById("gameResult").innerHTML =
+        "Damn😏 My heart already chose you ❤️";
+}
+
+// Floating hearts
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+}, 400);
+</script>
+
+</body>
+</html>
