@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Baby 🖤</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ce2952, #9c318e, #141442);
+    color: white;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #ff4d6d;
+    margin-top: 40px;
+}
+
+    /* Gallery */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .gallery img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    button {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 30px;
+        background-color: #ff4d6d;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+
+    <!-- Background Music -->
+<audio autoplay loop>
+    <source src="Sweet Love.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+    <!-- GALLERY -->
+<section>
+    <h2>📸 Our Memories</h2>
+    <div class="gallery">
+        <img src="https://picsum.photos/300?1">
+        <img src="https://picsum.photos/300?2">
+        <img src="https://picsum.photos/300?3">
+        <img src="https://picsum.photos/300?4">
+    </div>
+    <button onclick="location.href='index.html'">Back to Home</button>
+</section>
+</body>
